@@ -4,7 +4,8 @@
   "description": "Webpack app Joke generator",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack serve"
   },
   "keywords": [
     "#webpack",
@@ -22,6 +23,7 @@
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.54.4",
     "sass-loader": "^13.0.2",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "webpack-dev-server": "^4.10.0"
   }
 }

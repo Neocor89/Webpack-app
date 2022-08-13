@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -7,8 +8,9 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].js",
-  },
+    //+ [name] = nom du fichier [contenthash] = hash du fichier generé en auto
+    filename: "[name][contenthash].js",
+  }, //+ For Sass module
   module: {
     rules: [
       {
@@ -16,5 +18,12 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
-  },
+  }, //+ For html plugin
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Webpack app Joke generator",
+      filename: "index.html",
+      template: 'src/template.html',
+    }),
+  ],
 };
