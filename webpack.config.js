@@ -8,15 +8,38 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    //+ [name] = nom du fichier [contenthash] = hash du fichier generé en auto
+    //: [name] = nom du fichier 
+    //: [contenthash] = hash du fichier generé en auto
     filename: "[name][contenthash].js",
-  }, //+ For Sass module
+    clean: true, //: For not generate multiple [hashfiles]
+  },
+  devtool: 'source-map',
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'dist')
+    },
+    port: 3000,
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.scss$/, //: all '.scss' files
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      {
+        test: /\.js$/, //: all '.js' files
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          }
+        }
+      }
     ],
   }, //+ For html plugin
   plugins: [
