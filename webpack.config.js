@@ -8,15 +8,16 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    //: [name] = nom du fichier 
+    //: [name] = nom du fichier
     //: [contenthash] = hash du fichier generé en auto
     filename: "[name][contenthash].js",
     clean: true, //: For not generate multiple [hashfiles]
+    assetModuleFilename: '[name][ext]'
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'dist')
+      directory: path.resolve(__dirname, "dist"),
     },
     port: 3000,
     open: true,
@@ -34,11 +35,16 @@ module.exports = {
         test: /\.js$/, //: all '.js' files
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          //: Babel loader config
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env'],
-          }
-        }
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+      { //: Config images Loader
+        test: /\.(png|jpg|svg| jpeg|gif)$/i,
+        type:'asset/resource'
       }
     ],
   }, //+ For html plugin
@@ -46,7 +52,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Webpack app Joke generator",
       filename: "index.html",
-      template: 'src/template.html',
+      template: "src/template.html",
     }),
   ],
 };

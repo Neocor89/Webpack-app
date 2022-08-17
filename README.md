@@ -1,9 +1,11 @@
 # Webpack-app
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)  ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)  ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)   ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)  ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)  ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)   ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)  ![Babel](https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black)
+
+### A simple project that brings together the majority of the scenarios that can be encountered 
 
 ## **SETUP**
 
-Creation webpack app folder
+Creating a simple webpack application folder
 
 ```
 | dist
@@ -293,7 +295,8 @@ npm i -D babel-loader @babel/core @babel/preset-env
 Anything that has a `.js` extension,
 but we don't want to mess with anything in node modules.
 In the webpack config file add exclude, 
-and we add optional loader babel preset-env, if you want to be backwards compatible with older browsers
+and we add optional loader babel preset-env, 
+if you want to be backwards compatible with older browsers
 
 ```js
 module.exports = {
@@ -315,4 +318,16 @@ module.exports = {
     ],
   },
 }
+```
+
+### `Add and config Babel loader`
+
+use npm build to set up the webpack config file configuration
+
+### `Run dev mode`
+
+use to start development mode
+
+```
+npm run dev
 ```

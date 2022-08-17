@@ -1,5 +1,15 @@
+import axios from "axios";
+
 function generateJoke() {
-  return "what is green that goes up and down ?  A pea in an elevator 😂🙄"
+  const config = {
+    headers: {
+      Accept: 'application/json'
+    }
+  }
+  axios.get('https://icanhazdadjoke.com', config).then((res) => {
+    document.getElementById('joke').innerHTML = res.data.joke
+    
+  })
 }
 
 export default generateJoke;
