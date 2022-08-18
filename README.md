@@ -5,7 +5,7 @@
 
 ## **SETUP**
 
-Creating a simple webpack application folder
+Create a simple folder for the webpack application
 
 ```
 | dist
@@ -323,6 +323,19 @@ module.exports = {
 ### `Add and config Babel loader`
 
 use npm build to set up the webpack config file configuration
+
+
+### `Using Webpack bundel analyzer`
+
+- Install 
+
+```
+npm i -D bundle-analyzer
+```
+
+- Config
+
+In webpack config file
 
 ### `Run dev mode`
 

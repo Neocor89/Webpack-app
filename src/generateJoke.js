@@ -1,5 +1,7 @@
+//: Import of axios
 import axios from "axios";
 
+//: Configuring the API call
 function generateJoke() {
   const config = {
     headers: {
