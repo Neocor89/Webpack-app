@@ -1,5 +1,9 @@
+//:: Imports
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+//: view the package structure of your application
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 module.exports = {
   mode: "development",
@@ -54,5 +58,6 @@ module.exports = {
       filename: "index.html",
       template: "src/template.html",
     }),
+    new BundleAnalyzerPlugin(),
   ],
 };

@@ -259,7 +259,7 @@ module exports = {
 ```
 
 ### `Configuration Source map`
-- useful for debugging 
+- **useful for debugging** 
 
 source-maps provide a map from your dist production code, 
 to your source code to enable source maps 
@@ -279,7 +279,7 @@ module exports = {
 
 ### `Add and config Babel loader`
 
-- BabelJS 
+- **BabelJS** 
 
 Is a JavaScript transpiler which transpiles new features into old standard. 
 With this, the features can be run on both old and new browsers.
@@ -304,7 +304,8 @@ module.exports = {
     /*
     */
     rules: [
-      //*
+      /*
+      */
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -327,18 +328,47 @@ use npm build to set up the webpack config file configuration
 
 ### `Using Webpack bundel analyzer`
 
-- Install 
+Allows you to *view* the different modules, packages, files of your application.
+it is also possible to search for particular items, get different information about the size of different file packages
+
+- **Install** 
 
 ```
 npm i -D bundle-analyzer
 ```
 
-- Config
+- **Config**
 
-In webpack config file
+In webpack config file import the package 
 
+```js
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
+```
+
+And add a new bundle in the plugin section
+
+```js
+plugins: [
+    /*
+    */
+    new BundleAnalyzerPlugin(),
+  ],
+```
+
+<img src="./Readme-assets/visual-structure-bundle-analyzer.png"/>
+
+
+---
+## **Summary** 📑
+
+for the addition of the different features of the application launch the command :
+### `Run build mode`
+```
+npm run build
+```
 ### `Run dev mode`
 
+for the development part of the application launch the command
 use to start development mode
 
 ```
